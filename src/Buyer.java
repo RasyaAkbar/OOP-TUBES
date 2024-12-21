@@ -1,9 +1,14 @@
 class Buyer extends Person {
     private double budget;
 
-    public Buyer(String name, double budget) {
-        super(name);
+
+    public Buyer(int id, String name, double budget) {
+        super(id, name);
         this.budget = budget;
+    }
+
+    public Buyer (){
+        budget = 0;
     }
 
     public boolean canBuy(double price) {
@@ -18,9 +23,22 @@ class Buyer extends Person {
         }
     }
 
+    
+    public int getId() {
+        return id;
+    }
+
     @Override
     public void displayInfo() {
-        System.out.println("Buyer: " + name + " | Remaining Budget: $" + budget);
+        System.out.println("ID: " + id + " | Buyer: " + name + " | Remaining Budget: $" + budget);
+    }
+
+    public double getBudget() {
+        return budget;
+    }
+
+    public void setBudget(double budget) {
+        this.budget = budget;
     }
 }
 

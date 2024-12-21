@@ -4,7 +4,7 @@ class Item {
     private double price;
     private String condition;
     private int stock;
-
+ 
 
 
     public Item(int id, String itemName, double price, String condition, int stock) {
@@ -15,11 +15,15 @@ class Item {
         this.stock = stock;
     }
 
+
+
+    
     public int getId() {
         return id;
     }
 
-   
+
+
 
     public double getPrice() {
         return price;
@@ -33,9 +37,6 @@ class Item {
         return stock;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     
 
@@ -52,7 +53,15 @@ class Item {
     }
 
     public void displayItem() {
-        System.out.println("Item ID: " + id + " | Name: " + itemName + " | Price: $" + price + " | Condition: " + condition + " | Stock: "+ stock );
+        System.out.println("ID: " + id + " | Name: " + itemName + " | Price: $" + price + " | Condition: " + condition + " | Stock: "+ stock );
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
 }

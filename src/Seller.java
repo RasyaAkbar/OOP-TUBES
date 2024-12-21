@@ -4,8 +4,8 @@ class Seller extends Person {
     private ArrayList<Item> inventory;
     private int itemsSold;
 
-    public Seller(String name) {
-        super(name);
+    public Seller(int id, String name) {
+        super(id, name);
         this.inventory = new ArrayList<>();
         itemsSold = 0;
     }
@@ -14,7 +14,7 @@ class Seller extends Person {
         inventory.add(item);
     }
 
-    public Item sellItem(int itemId) {
+    /*public Item sellItem(int itemId) {
         for (Item item : inventory) {
             if (item.getId() == itemId) {
                 item.setStock(item.getStock()-1);
@@ -22,13 +22,18 @@ class Seller extends Person {
             }
         }
         return null; // Item not found
-    }
+    }*/
 
     public void viewInventory() {
         System.out.println("Seller: "+name);
         for (Item item : inventory) {
             item.displayItem();
         }
+    }
+
+    
+    public int getId() {
+        return id;
     }
 
     public ArrayList<Item> getInventory() {
@@ -42,7 +47,11 @@ class Seller extends Person {
     
     @Override
     public void displayInfo() {
-        System.out.println("Seller: " + name + " | Items Sold: " + itemsSold);
+        System.out.println("ID: " + id + " | Seller: " + name + " | Items Sold: " + itemsSold);
+    }
+
+    public void displayName() {
+        System.out.println("Seller: " + name );
     }
 
     public int getItemsSold() {
