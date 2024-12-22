@@ -34,7 +34,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            try {
+            try{
+                System.out.println("====== System for Selling Secondhand Item ======");
                 System.out.println("\n==============================");
                 System.out.println("Menu:");
                 System.out.println("1. View Item");
