@@ -43,12 +43,9 @@ public class Main {
                 System.out.println("4. Add Buyer");
                 System.out.println("5. Add Seller");
                 System.out.println("6. Add Item");
-                System.out.println("7. Update Buyer");
-                System.out.println("8. Update Seller");
-                System.out.println("9. Update Item");
-                System.out.println("10. Exit");
+                System.out.println("7. Exit");
+                System.out.println("==============================");
                 System.out.print("Enter your choice: ");
-            
                 int choice = scanner.nextInt();
                 scanner.nextLine();
 
@@ -114,7 +111,8 @@ public class Main {
                     for (Seller seller : transaction.getSellers()) {
                         seller.displayInfo();
                     }
-                    System.out.println("==============================");
+                    System.out.println("==============================")
+                    ;
                     System.out.println("==============================");
                     System.out.println("Buyers:");
                     for (Buyer buyer : transaction.getBuyers()) {
@@ -165,86 +163,19 @@ public class Main {
                     }
                     System.out.println("==============================");
 
-                    System.out.print("Pick seller to assign the item to: ");
-                    int idx = scanner.nextInt();
-
-                    transaction.getSellers().get(idx-1).addItem(newItem);
+                    int sellerIndex = 0;
+                    while(true){
+                        System.out.print("Pick seller to assign the item to: ");
+                        sellerIndex = scanner.nextInt();
+                        if(sellerIndex>0 && sellerIndex <= transaction.getSellers().size()){
+                            break;
+                        }
+                        System.out.println("Seller don't exist");
+                    }
+                    transaction.getSellers().get(sellerIndex-1).addItem(newItem);
                     System.out.println("item added");
-
                 }
                 else if(choice == 7){
-
-                    System.out.println("==============================");
-                    System.out.println("Buyers:");
-                    for (Buyer buyer : transaction.getBuyers()) {
-                        buyer.displayInfo();
-                    }
-                    System.out.println("==============================");
-
-                    System.out.print("Select buyer you want to update: ");
-                    int idx = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.print("Update name: ");
-                    String name = scanner.nextLine();
-                    System.out.print("Update budget: ");
-                    double budget = scanner.nextDouble();
-                    scanner.nextLine();
-
-                    transaction.getBuyers().get(idx-1).setBudget(budget);
-                    transaction.getBuyers().get(idx-1).setName(name);
-                    System.out.println("Buyer updated.");
-                }
-                else if(choice == 8){
-
-                    System.out.println("==============================");
-                    System.out.println("Sellers:");
-                    for (Seller seller : transaction.getSellers()) {
-                        seller.displayInfo();
-                    }
-                    System.out.println("==============================");
-
-                    System.out.print("Select seller you want to update: ");
-                    int idx = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.print("Update name: ");
-                    String name = scanner.nextLine();
-                    scanner.nextLine();
-
-                    transaction.getSellers().get(idx-1).setName(name);
-                    System.out.println("Seller updated.");
-                }
-                else if(choice == 9){
-
-                    System.out.println("==============================");
-                    System.out.println("\nItems:");
-                    for (Item item : transaction.getItems()) {
-                        item.displayItem();
-                    }
-                    System.out.println("==============================");
-
-                    System.out.print("Select item id to update: ");
-                    int idx = scanner.nextInt();
-                    scanner.nextLine();
-                    System.out.print("Update item name: ");
-                    String itemName = scanner.nextLine();
-                    System.out.print("Update item price: ");
-                    double itemPrice = scanner.nextDouble();
-                    scanner.nextLine();
-                    System.out.print("Update item condition: ");
-                    String itemCondition = scanner.nextLine();
-                    System.out.print("Update item stock: ");
-                    int itemStock = scanner.nextInt();
-                    scanner.nextLine();
-
-                    Item item = transaction.getItems().get(idx-1);
-                    item.setItemName(itemName);
-                    item.setPrice(itemPrice);
-                    item.setCondition(itemCondition);
-                    item.setStock(itemStock);
-                    
-                    System.out.println("Item updated");
-                }
-                else if(choice == 10){
                     System.out.println("Exiting the system.");
                     break;
                 }
