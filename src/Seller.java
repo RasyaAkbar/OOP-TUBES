@@ -25,7 +25,7 @@ class Seller extends Person {
     }*/
 
     public void viewInventory() {
-        System.out.println("Seller: "+name);
+        System.out.println("Seller: "+name + " | ID: "+ id);
         for (Item item : inventory) {
             item.displayItem();
         }
@@ -43,6 +43,9 @@ class Seller extends Person {
     public void incrementItemsSold(){
         itemsSold++;
     }
+    public void incrementItemsSold(int quantity){
+        itemsSold+=quantity;
+    }
     
     
     @Override
@@ -50,8 +53,8 @@ class Seller extends Person {
         System.out.println("ID: " + id + " | Seller: " + name + " | Items Sold: " + itemsSold);
     }
 
-    public void displayName() {
-        System.out.println("Seller: " + name );
+    public void displayNameAndId() {
+        System.out.println("Seller: " + name + " ID: " + id);
     }
 
     public int getItemsSold() {

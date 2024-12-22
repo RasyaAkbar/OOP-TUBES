@@ -15,15 +15,9 @@ class Item {
         this.stock = stock;
     }
 
-
-
-    
     public int getId() {
         return id;
     }
-
-
-
 
     public double getPrice() {
         return price;
@@ -36,9 +30,6 @@ class Item {
     public int getStock() {
         return stock;
     }
-
-
-    
 
     public void setPrice(double price) {
         this.price = price;
