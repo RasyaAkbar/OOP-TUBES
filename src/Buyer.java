@@ -15,11 +15,13 @@ class Buyer extends Person {
         return price <= budget;
     }
 
-    public void purchase(double price) {
+    public boolean purchase(double price) {
         if (price <= budget) {
-            budget -= price;
+            this.budget = budget - price;
+            return true;
         } else {
             System.out.println("Not enough budget!");
+            return false;
         }
     }
 
