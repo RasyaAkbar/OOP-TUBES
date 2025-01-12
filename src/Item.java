@@ -43,6 +43,8 @@ public class Item {
         this.stock = stock;
     }
 
+    
+
     public void displayItem() {
         System.out.println("ID: " + id + " | Name: " + itemName + " | Price: $" + price + " | Condition: " + condition + " | Stock: "+ stock );
     }
@@ -53,6 +55,10 @@ public class Item {
 
     public void setItemName(String itemName) {
         this.itemName = itemName;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
 }

@@ -77,6 +77,21 @@ public class Transaction {
     public ArrayList<Item> getItems() {
         return items;
     }
+    
+
+
+
+    public void setSellers(ArrayList<Seller> sellers) {
+        this.sellers = sellers;
+    }
+
+    public void setBuyers(ArrayList<Buyer> buyers) {
+        this.buyers = buyers;
+    }
+
+    public void setItems(ArrayList<Item> items) {
+        this.items = items;
+    }
 
     public void makeTransaction() {
         Scanner scanner = new Scanner(System.in);

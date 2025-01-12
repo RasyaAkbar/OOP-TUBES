@@ -11,6 +11,9 @@ public class Buyer extends Person {
         budget = 0;
     }
 
+    
+
+
     public boolean canBuy(double price) {
         return price <= budget;
     }

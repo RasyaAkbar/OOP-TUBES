@@ -10,6 +10,20 @@ public class Seller extends Person {
         itemsSold = 0;
     }
 
+    
+
+    public void setInventory(ArrayList<Item> inventory) {
+        this.inventory = inventory;
+    }
+
+
+
+    public void setItemsSold(int itemsSold) {
+        this.itemsSold = itemsSold;
+    }
+
+
+
     public void addItem(Item item) {
         inventory.add(item);
     }
