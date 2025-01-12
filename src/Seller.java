@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-class Seller extends Person {
+public class Seller extends Person {
     private ArrayList<Item> inventory;
     private int itemsSold;
 

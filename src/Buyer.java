@@ -1,4 +1,4 @@
-class Buyer extends Person {
+public class Buyer extends Person {
     private double budget;
 
 
